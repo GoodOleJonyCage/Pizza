@@ -1,0 +1,109 @@
+<div class="row pizzesizecontainer">
+  <div class="pizzasizelabel">
+    Number of Pizzas
+  </div>
+  <div class="selectparent">
+    <select change="UpdateTotalNumber($event)"
+            #mySelect
+            (change)='NumberOfPizzasChanged(mySelect.value)'>
+      <option *ngFor="let num of numofpizzas"
+              [value]="num">
+        {{num}}
+      </option>
+    </select> 
+  </div>
+</div>
+<div class="row">
+  <div class="pizzasizelabel">
+    Pizza Size
+  </div>
+  <div class="pizzasize">
+    <div>
+      Small
+      <input [(ngModel)]="pizzasize"
+             type="radio"
+             (change)="updateTotal()"
+             [value]='SmallPizeSize'
+             name="pizzasize" />
+    </div>
+    <div>
+      Medium
+      <input [(ngModel)]="pizzasize"
+             type="radio"
+             (change)="updateTotal()"
+             [value]='MedPizeSize'
+             name="pizzasize" />
+    </div>
+    <div>
+      Large<input [(ngModel)]="pizzasize"
+                  type="radio"
+                  (change)="updateTotal()"
+                  [value]='LargePizeSize'
+                  name="pizzasize" />
+    </div>
+    <div>
+      Extra Large
+      <input [(ngModel)]="pizzasize"
+             type="radio"
+             (change)="updateTotal()"
+             [value]='ExtraLargePizeSize'
+             name="pizzasize" />
+    </div>
+  </div>
+</div>
+<div>
+  <div class="toppings">Toppings</div>
+  <div class="toppings">
+    <h5>Veg Toppings</h5>
+    <div>
+      Tomatoes ( $1.00)
+      <input [(ngModel)]="hastomatoes" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Onions ( $0.50)
+      <input [(ngModel)]="hasonions" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Bell pepper($1.00)
+      <input [(ngModel)]="hasbananapeppers" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Mushrooms($1.20)
+      <input [(ngModel)]="hasmushrooms" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Pineapple($0.75)
+      <input [(ngModel)]="haspine" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+  </div>
+  <div class="toppings">
+    <h5>Non Veg Toppings</h5>
+    <div>
+      Sausage ( $1.00)
+      <input [(ngModel)]="hassausage" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Pepporini ( $2.00)
+      <input [(ngModel)]="hasPepporini" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+    <div>
+      Barbecue chicken($3.00)
+      <input [(ngModel)]="hasBBQChicken" type="checkbox"
+             (change)="updateTotal()" />
+    </div>
+  </div>
+</div>
+<div class="totalrow">
+  <div>Total</div>
+  <div class="totalrow-total">
+    <div>Toppings Total (${{ToppingTotal}})</div>
+    <div>Total (${{Total}}) <i>{{promotion}}</i></div>
+  </div>
+</div>

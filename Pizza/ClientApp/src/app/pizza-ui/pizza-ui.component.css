@@ -1,0 +1,57 @@
+.row {
+  display: flex;
+  flex-flow: row;
+}
+
+.selectparent  {
+    display: flex;
+    flex-grow:1;
+    justify-content:center;
+}
+.pizzesizecontainer{
+    margin-bottom:30px;
+}
+.pizzasizelabel {
+  display: flex;
+  flex-basis: content;
+}
+
+[type="radio"] {
+  margin-left:10px;
+}
+
+.pizzasize {
+  display: flex;
+  flex-direction: row;
+}
+
+  .pizzasize div {
+    margin-left: 15%;
+    display:flex;
+    align-items:center;
+  }
+
+.toppings {
+  margin-top: 20px;
+}
+
+  .toppings h5 {
+  }
+
+  .toppings div {
+    margin-top: 10px;
+  }
+
+.totalrow{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    flex:1;
+}
+
+
+.totalrow-total {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
